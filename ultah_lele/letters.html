@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moments</title>
+
+    <!-- Link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Lancelot&display=swap" rel="stylesheet">
+
+    <style>
+
+         body {
+           background: #cca58e;
+           color: black;
+           margin: 0;
+           font-family: 'Yeseva One', serif;
+           min-height: 100vh;
+        }
+
+        .kesatu {
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 80px;
+        }
+
+        .kesatu a {
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 60px;
+            transition: all 0.8s ease;
+        }
+
+        .kesatu a:hover {
+            color: #7a0404;
+            text-decoration: underline;
+            text-underline-offset: 12px;
+            font-size: 25px;
+        }
+
+        .kesatu li {
+            list-style: none;
+        }
+
+        .judul {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .p1 {
+            font-size: 70px;
+            margin: 0;
+            padding-top: 25px;
+        }
+
+
+        .p2 {
+            font-family: 'Lancelot', cursive; 
+            margin: 0;
+            font-size: 30px;
+            padding-left: 445px;
+            bottom: 740px;
+            display: flex;
+        }
+
+        .pop_tambah {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px); 
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+        }
+
+        .atur1{
+            display: flex;
+            flex-wrap: wrap;       /* biar turun ke bawah kalau banyak */
+            gap: 30px;             /* jarak antar kotak */
+            margin: 0 auto;     /* atas-bawah | kiri-kanan */
+            justify-content: center;
+            max-width: 1200px;
+            padding: 50px;
+        }
+
+        .kotak_awal {
+            background:  white;
+            width: 250px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;   /* vertikal */
+            align-items: center;
+            gap: 10px;                /* jarak teks ke kotak */
+            box-shadow: 0 0px 25px rgba(0, 0, 0, 0.28);
+            justify-content: center;
+            position: relative;
+            transition: all 0.8s ease;
+        }
+
+        .kotak_awal:hover {
+            background: #fff2bd;
+            width: 300px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;   /* vertikal */
+            align-items: center;
+            gap: 10px;                /* jarak teks ke kotak */
+            box-shadow: 0 0px 25px rgba(240, 213, 10, 0.8);
+            justify-content: center;
+        }
+
+        .klik_buka {
+            background: #7a0404;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0px 25px rgba(0, 0, 0, 0.28);
+            position: relative;
+        }
+
+        /* emoji */
+        .lock,
+        .unlock {
+            position: absolute;
+            font-size: 24px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .unlock {
+            opacity: 0;
+            transform: scale(0.7);
+        }
+
+        /* SAAT HOVER KOTAK */
+        .klik_buka:hover .lock {
+            opacity: 0;
+            transform: scale(0.7);
+        }
+
+        .klik_buka:hover .unlock {
+            opacity: 1;
+            transform: scale(1);
+            cursor: pointer;
+        }
+
+        .isi_popup {
+            background: #cca58e;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: pop 0.3s ease;
+            font-style: arial;
+            line-height: 1.8;
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .isi_popup button {
+            margin-top: 20px;
+            padding: 8px 20px;
+            border: none;
+            background: #7a0404;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <nav class="kesatu">
+      <ul>
+        <li> <a href="index.html">Home</a></li>
+      </ul>
+      <ul>
+        <li> <a href="our_story.html">Our Story</a></li>
+      </ul>
+      <ul>
+        <li> <a href="moments.html">Moments</a></li>
+      </ul>
+      <ul>
+        <li> <a href="letters.html">Letters</a></li>
+      </ul>
+      <ul>
+        <li> <a href="for_You.html">For You</a></li>
+      </ul>
+    </nav>
+
+    <nav class="judul">
+        <p class="p1">Letters</p>
+    </nav>
+
+    <nav>
+        <p class="p2">Words Form My Heart</p>
+    </nav>
+
+    <div class="atur1">
+
+    <!-- 1 -->
+        <div class="kotak_awal">
+            <p class="judul">Open When U 😡</p>
+
+            <div class="klik_buka" onclick="bukaPopup('popup1')">
+                 <span class="lock">🔒</span>
+                 <span class="unlock">🔓</span>
+            </div>
+        </div>
+
+    <!-- 2 -->
+     <div class="kotak_awal">
+            <p class="judul">Open When U 😢</p>
+
+            <div class="klik_buka" onclick="bukaPopup('popup2')">
+                 <span class="lock">🔒</span>
+                 <span class="unlock">🔓</span>
+            </div>
+        </div>
+
+        <!-- 3 -->
+     <div class="kotak_awal">
+            <p class="judul">Open When U 😩</p>
+
+            <div class="klik_buka" onclick="bukaPopup('popup3')">
+                 <span class="lock">🔒</span>
+                 <span class="unlock">🔓</span>
+            </div>
+        </div>
+
+        <!-- 4 -->
+     <div class="kotak_awal">
+            <p class="judul">Open When U 🥺</p>
+
+            <div class="klik_buka" onclick="bukaPopup('popup4')">
+                 <span class="lock">🔒</span>
+                 <span class="unlock">🔓</span>
+            </div>
+        </div>
+
+        <!-- 5 -->
+     <div class="kotak_awal">
+            <p class="judul">Open When U 🥰</p>
+
+            <div class="klik_buka" onclick="bukaPopup('popup5')">
+                 <span class="lock">🔒</span>
+                 <span class="unlock">🔓</span>
+            </div>
+        </div>
+
+        <!-- 6 -->
+     <div class="kotak_awal">
+            <p class="judul">Open When U 😴</p>
+
+            <div class="klik_buka" onclick="bukaPopup('popup6')">
+                 <span class="lock">🔒</span>
+                 <span class="unlock">🔓</span>
+            </div>
+        </div>
+
+        <!-- 7 -->
+     <div class="kotak_awal">
+            <p class="judul">Open When U 😎</p>
+
+            <div class="klik_buka" onclick="bukaPopup('popup7')">
+                 <span class="lock">🔒</span>
+                 <span class="unlock">🔓</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- popup -->
+        <div class="pop_tambah" id="popup1">
+        <div class="isi_popup">
+            <h2>CIE MARAH HENGGON</h2>
+            <p>knp yang, marah kanapo?<br>
+            apa yang buat sayang awak marah?<br>
+            awak yang? tikcan? wanwan? jule? atau apa yang? <br>
+            mungkin terkadang aku kkurang tau apa yang buat kamu kesel atau marah sayang..<br>
+            aku cuma mau kamu tau, aku disini saat ini yang, aku siap dengarkan kelus kesah yang buat kamu marah. <br>
+            Aku akan memahami apa yang kamu rasakan tanpa menghakimi siap ayang benar dan siapa yang salah <br><br>
+            Kalau kamu marah karena aku.. karena aku udah melakukan kesalahan, aku minta maaf ya sayang.. <br>
+            Bukan karena aku mau cepat selesai dan lari dari kesalahan, tapi aku peduli. <br>
+            Marah nya kmau bukan alasan buat aku untuk jauh dari kamu yang, justru jadi hal penting kalau perasaan kita nyata. <br>
+            Ambil waktu kalau perlu.. tenangkan hati kamu sayang, Saat kamu siap, aku mau kita bicara dengan tenang untuk saling mengerti. <br>
+            Boleh marah, tapi jangan lama-lama ya.. aku kangen senyuman henggon ku.
+            </p>
+            <button onclick="tutupPopup('popup1')">Close</button>
+        </div>
+    </div>
+
+    <div class="pop_tambah" id="popup2">
+        <div class="isi_popup">
+            <h2>OH NOOO SAYANGKU LAGI SEDIH </h2>
+            <p>Sayang... <br>
+            ada apa? u okay?? <br>
+            kalau hari ini rasanya berat.. ngga papa sayang! <br>
+            ga semua hari harus kuat, dan ngga semua luka haruss lekas sembuh. <br>
+            kadang, sedih cuma mau diakui.. bukan di hilangkan bahkan di paksa hilang. <br>
+            Aku tahu ada hal-hal yang gabisa kamu ceritakan dan ada sisi yang kamu simpan sendirian sayang, <br>
+            Tapi, tolong ingat satu hal, kamu ga sendirian. Ada Allah, mama, ada papa, Putri, Adam, Kak Tria, Dela, Om dan Aku. <br>
+            InsyaAllah aku siap menerima sedih kamu. <br>
+
+            Aku tetap disini, mencintaimu.
+
+            </p>
+            <button onclick="tutupPopup('popup2')">Close</button>
+        </div>
+    </div>
+
+    <div class="pop_tambah" id="popup3">
+        <div class="isi_popup">
+            <h2>SAYANGGGGG KENAPO SAYANG AWAK</h2>
+            <p>Sayang.. <br>
+            Kalau hari ini kamu lelah, itu bukan tanda kamu lemah. <br>
+             Itu tanda kamu sudah berusaha sejauh yang kamu bisa. <br>
+             Capek itu wajar, apalagi kalau kamu terlalu sering kuat sendirian. <br>
+             Nggak apa-apa berhenti sebentar. <br>
+            Nggak apa-apa menarik napas lebih lama dari biasanya. <br>
+            Dunia nggak akan runtuh hanya karena kamu memilih istirahat. <br>
+            Aku tahu kamu sering memaksakan diri, <br>
+            menyimpan capekmu di balik senyum,
+            dan bilang “nggak apa-apa” padahal hatimu ingin istirahat. <br>
+            Kalau kamu butuh sandaran,
+            biar aku jadi tempatmu bersandar. <br>
+            Kalau langkahmu terasa berat,
+            biar aku yang menggenggam tanganmu pelan-pelan. <br>
+            Istirahatlah, sayang. <br>
+            Kamu tidak harus kuat setiap waktu. <br>
+            Dicintai dalam keadaan lelah pun,
+            kamu tetap berharga. 
+            </p>
+            <button onclick="tutupPopup('popup3')">Close</button>
+        </div>
+    </div>
+
+    <div class="pop_tambah" id="popup4">
+        <div class="isi_popup">
+            <h2>HAI GON</h2>
+            <p>Aku tahu kamu lagi capek.<br>
+            Nggak semua hal harus kamu bereskan hari ini.<br><br>
+
+            Kalau rasanya berat,<br>
+            ambil jeda sebentar juga nggak apa-apa.<br>
+            Kamu sudah melakukan yang terbaik<br>
+            dengan cara yang kamu bisa.<br><br>
+
+            Pelan-pelan saja,<br>
+            aku ada di sini.<br>
+            Kita jalanin satu-satu.
+            </p>
+            <button onclick="tutupPopup('popup4')">Close</button>
+        </div>
+    </div>
+
+    <div class="pop_tambah" id="popup5">
+        <div class="isi_popup">
+            <h2>CIE MALU IH DAH TUA LOPE"</h2>
+            <p>Sayang,<br>
+            aku nggak tahu sejak kapan,<br>
+            kehadiranmu jadi hal yang aku tunggu.<br><br>
+
+            Ada rasa tenang saat bersamamu,<br>
+            sesuatu yang sulit dijelaskan,<br>
+            tapi selalu terasa cukup.<br><br>
+
+            Kalau ini jatuh cinta,<br>
+            aku ingin menjalaninya pelan-pelan,<br>
+            sama kmau gon, setiap hari.
+            </p>
+            <button onclick="tutupPopup('popup5')">Close</button>
+        </div>
+    </div>
+
+    <div class="pop_tambah" id="popup6">
+        <div class="isi_popup">
+            <h2>NGANTUK YA GON??</h2>
+            <p>Sayang,<br>
+                kalau mata kamu sudah berat,<br>
+                jangan dipaksa terus ya.<br><br>
+
+                Hari ini kamu pasti capek,<br>
+                banyak yang dipikirin,<br>
+                banyak juga yang kamu tahan sendiri.<br><br>
+
+                Nggak apa-apa kalau mau berhenti sebentar.<br>
+                Istirahat itu bukan kalah,<br>
+                itu cara kamu jaga diri.<br><br>
+
+                Tidur dulu yang nyenyak,<br>
+                biar besok kamu bangun<br>
+                bisa menjalani hari bahagia bersama tikcan hehe
+            </p>
+            <button onclick="tutupPopup('popup6')">Close</button>
+        </div>
+    </div>
+
+    <div class="pop_tambah" id="popup7">
+        <div class="isi_popup">
+            <h2>OH MY GODDDDDD, LAGI GANTENG SAYANG AWAK!
+            </h2>
+            <p>Sayang,<br>
+                kadang kamu nggak sadar,<br>
+                tapi kamu tuh ganteng dengan cara kamu sendiri.<br><br>
+
+                Bukan cuma dari wajah,<br>
+                tapi dari caramu bersikap,<br>
+                cara kamu mikir,<br>
+                dan caramu tetap jadi diri sendiri.<br><br>
+
+                Ada hal-hal dari kamu<br>
+                yang bikin aku nyaman tanpa alasan rumit.<br>
+                Dan itu yang paling menarik.<br><br>
+
+                Tetap jadi kamu ya,<br>
+                karena versi itu sudah lebih dari cukup.
+
+            </p>
+            <button onclick="tutupPopup('popup7')">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function bukaPopup(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+
+        function tutupPopup(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+</body>
+</html>
